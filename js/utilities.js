@@ -20,7 +20,21 @@ const getTextValue=(id)=>{
      const fieldClear = (id)=>{
         document.getElementById(id).value= ''
      }
+     const showToast = (id)=>{
+        const toast= document.getElementById(id)
+        toast.classList.remove('hidden')
+        document.getElementById('Aid').classList.add('hidden')
+        document.getElementById('noakhali').classList.add('hidden')
+        document.getElementById('feni').classList.add('hidden')
 
+        document.getElementById('toastClose').addEventListener('click', ()=>{
+            document.getElementById('Aid').classList.remove('hidden')
+        document.getElementById('noakhali').classList.remove('hidden')
+        document.getElementById('feni').classList.remove('hidden')
+        toast.classList.add('hidden')
+        })
+
+    }
 
     //  const donate= (inputAmount, balanceAmount, donateReceive )=>{
     //     const inputDonate= getInputValue(inputAmount);
@@ -40,7 +54,7 @@ const getTextValue=(id)=>{
 
     //  }
 
-    const donate=(inputBalance, mainBalance, areaBalance)=>{
+const donate=(inputBalance, mainBalance, areaBalance, toast)=>{
 const inputValue= getInputValue(inputBalance);
 const myBalance = getTextValue(mainBalance) ;
 const areaWiseBalance = getTextValue(areaBalance);
@@ -52,8 +66,12 @@ if(!isNaN(inputValue) && inputValue> 0 && inputValue<= myBalance){
     document.getElementById(areaBalance).innerText= areaBalanceUpdate;
 
     fieldClear(inputBalance)
+    showToast(toast);
+    
 
 }else{
     alert('give correct Amount')
 }
     }
+
+    // ---------toast--------------

@@ -17,13 +17,15 @@
 
 document.getElementById('NoakhaliDonate').addEventListener('click', ()=>{
 
-    donate('noakhaliInputAmount', 'balance','noakhaliBalance'  )
+    donate('noakhaliInputAmount', 'balance','noakhaliBalance' ,'toast'  )
+    
 })
 
 document.getElementById('FeniDonate').addEventListener('click', ()=>{
-    donate('feniInput','balance', 'Fenibalance')
+    donate('feniInput','balance', 'Fenibalance' ,'toast' )
 })
 
 document.getElementById('aidDonateBtn').addEventListener('click', ()=>{
-    donate('aidInput','balance', 'Aidbalance', )
+    donate('aidInput','balance', 'Aidbalance', 'toast' )
 })
+
